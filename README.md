@@ -34,7 +34,7 @@ F --> G[持久化保存为 TXT 报告]
 🚀 快速开始 (Quick Start)
 
 1. 克隆项目
-git clone https://github.com/你的用户名/AffinityAI.git
+git clone (https://github.com/laolaohe/HeartMatch-AI.git)
 cd HeartMatch
 
 2. 配置 API Key
