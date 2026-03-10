@@ -1,4 +1,4 @@
-# HeartMatch-AI
+![微信图片_20240803143822](https://github.com/user-attachments/assets/819b7566-ef50-46ab-998e-cb752fee75ef)# HeartMatch-AI
 💖 HeartMatch-AI：基于大模型的深度婚恋性格匹配系统 (LLM-as-a-Judge)
 
 📌 项目简介
@@ -75,6 +75,10 @@ LLM 输出不稳定导致 JSON 解析崩溃的问题：
 数据持久化: 接入 MySQL/PostgreSQL 或 MongoDB 存储真实用户画像。
 
 异步调用优化: 目前两个 LLM 请求是串行同步阻塞的，未来可引入 asyncio 和 aiohttp 减少 API 等待时间。
-If you like this project, please consider giving it a ⭐!
-如果你觉得这个项目有趣，欢迎给我一个 Star！
+
+
+<img width="1457" height="864" alt="1" src="https://github.com/user-attachments/assets/0352b5bc-2d41-4f24-95c1-c68059b05b28" /><img width="1494" height="406" alt="屏幕截图 2026-03-10 130300" src="https://github.com/user-attachments/assets/2422a2a8-f54b-4d51-9c7e-3045264da8da" />
+
+
+<img width="1259" height="700" alt="屏幕截图 2026-03-10 130251" src="https://github.com/user-attachments/assets/b107ad5d-ead9-4f07-bd57-d2140552bfe9" />
 
