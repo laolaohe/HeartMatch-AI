@@ -13,6 +13,7 @@ HeartMatch-AI 是一个探索性的 AI 婚恋匹配 Demo。传统的交友软件
 利用了 DeepSeek API 的 response_format: json_object 特性，并通过正则清理、异常回退等机制，确保 LLM 稳定输出可供程序解析的结构化数据，极大提升了系统的鲁棒性。
 📝 自动化匹配报告生成 (Local Record Management)：
 每次匹配结束后，系统会自动将双方画像及详细的匹配分析（得分、Pros、Cons、AI寄语）打包保存为带时间戳的 .txt 报告，便于后续的产品化扩展（如生成 PDF 发送给用户）。
+
 🛠️ 技术栈与架构设计
 语言: Python 3.8+
 大模型服务: DeepSeek Chat API (deepseek-chat 模型)
@@ -68,6 +69,8 @@ LLM 输出不稳定导致 JSON 解析崩溃的问题：
 为何弃用 Embedding 而转向 LLM 打分？
 思考： 在项目初期，我尝试将用户画像转化为纯文本并调用 Embedding API 计算余弦相似度。但在测试中发现，对于婚恋场景，高度相似的向量并不等同于高匹配度（例如两个脾气暴躁的人向量极度相似，但相处起来是灾难）。
 迭代： 我果断重构了架构，引入了 matchmaker.py，让 LLM 直接“读懂”两个人的画像，重点分析“互补性”（如一方喜欢倾诉，另一方善于倾听）。这使得系统不仅能给出干瘪的分数，还能输出真实可落地的恋爱建议。
+
+
 🤝 未来优化方向 (TODO)
 
 前端可视化: 使用 FastAPI + Vue.js 或 Streamlit 将目前的 CLI 界面升级为 Web 交互界面。
@@ -76,6 +79,14 @@ LLM 输出不稳定导致 JSON 解析崩溃的问题：
 
 异步调用优化: 目前两个 LLM 请求是串行同步阻塞的，未来可引入 asyncio 和 aiohttp 减少 API 等待时间。
 
+🚀 愿景：从“静态匹配”到“动态情感辅助系统 (AI Wingman)”
+AffinityAI 的最终目标不仅是寻找“对的人”，更是协助用户“经营对的关系”。未来的系统将演进为 LLM 驱动的实时情感助手：
+基于人格底色的“话题破冰” (Contextual Icebreakers)：
+系统不再生成万金油式的开场白，而是基于双方的画像（如：一方是热爱徒步的 INFP，一方是喜欢逻辑推理的 INTJ），实时生成能引发双方共鸣的深度话题。
+语义解码与沟通建议 (Subtext Decoding & Coaching)：
+AI 将作为“情感导师”介入对话流。它能实时分析对方发言背后的情绪倾向和沟通意图，为用户提供响应建议（例如：对方表达了工作压力，AI 提醒用户此时应提供情绪价值而非逻辑建议）。
+恋爱教学机制 (Learning by Doing)：
+不仅仅是给答案，AI 还会解释“为什么要这样回复”，帮助社交焦虑或缺乏经验的用户在实战中学习沟通技巧，提升情商（EQ）。
 
 <img width="1457" height="864" alt="1" src="https://github.com/user-attachments/assets/0352b5bc-2d41-4f24-95c1-c68059b05b28" /><img width="1494" height="406" alt="屏幕截图 2026-03-10 130300" src="https://github.com/user-attachments/assets/2422a2a8-f54b-4d51-9c7e-3045264da8da" />
 
