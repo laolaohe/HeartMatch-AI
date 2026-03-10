@@ -1,4 +1,4 @@
-![微信图片_20240803143822](https://github.com/user-attachments/assets/819b7566-ef50-46ab-998e-cb752fee75ef)# HeartMatch-AI
+# HeartMatch AI
 💖 HeartMatch-AI：基于大模型的深度婚恋性格匹配系统 (LLM-as-a-Judge)
 
 📌 项目简介
