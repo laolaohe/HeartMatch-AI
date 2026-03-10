@@ -20,17 +20,8 @@ HeartMatch-AI 是一个探索性的 AI 婚恋匹配 Demo。传统的交友软件
 核心库: requests (API 调用), json (数据解析), re (数据清洗)
 
 
-架构流转图:
-Mermaid
-graph LR
-A[用户基础信息+开放式问答] -->|Prompt Engineering| B(LLM 画像抽取分析)
-B -->|正则清洗+JSON解析| 
-C[标准化文本画像 Profile_Text]
-D[数据库目标用户画像] --> E(LLM-as-a-Judge 匹配打分)
-C --> E
-E -->|结构化输出| F[生成匹配分数、Pros、Cons]
-F --> G[持久化保存为 TXT 报告]
-(注：如果你的 GitHub 不支持 Mermaid 渲染，可以把上面这段流程用文字或截图替代)
+<img width="640" height="209" alt="image" src="https://github.com/user-attachments/assets/44abe2e0-31b7-45d8-b183-39d239a443f6" />
+
 
 🚀 快速开始 (Quick Start)
 
